@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.devlan.expense.model.Expense;
 import com.devlan.expense.service.ExpenseService;
-
+ 
 @RestController
 @RequestMapping("/api/v1")
 public class ExpenseController {

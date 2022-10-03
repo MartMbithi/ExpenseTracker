@@ -9,8 +9,7 @@ import { AddExpenseComponent } from './components/add-expense/add-expense.compon
 const routers: Routes  = [
   {path: 'expenses', component: ListExpenseComponent},
   {path: 'addexpense', component: AddExpenseComponent},
-  {path: '', redirectTo: '/expenses', pathMatch: 'full'},
-
+  {path: '', redirectTo: '/expenses', pathMatch: 'full'}
 ];
 
 @NgModule({
@@ -22,7 +21,7 @@ const routers: Routes  = [
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule
+    RouterModule.forRoot{routers}
   ],
   providers: [],
   bootstrap: [AppComponent]

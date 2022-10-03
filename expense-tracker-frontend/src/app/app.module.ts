@@ -10,7 +10,7 @@ const routers: Routes  = [
   {path: 'expenses', component: ListExpenseComponent},
   {path: 'addexpense', component: AddExpenseComponent},
   {path: '', redirectTo: '/expenses', pathMatch: 'full'}
-];
+]; 
 
 @NgModule({
   declarations: [

@@ -8,7 +8,7 @@ import { Expense } from '../models/expense';
   providedIn: 'root',
 })
 export class ExpenseService {
-  //Register Your Url Here
+  /* Register You Url Here */
   private getUrl: string = 'http://127.0.0.1:8080/api/v1/expenses';
   constructor(private _httpClient: HttpClient) {}
 

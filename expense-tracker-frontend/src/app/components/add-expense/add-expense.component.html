@@ -1,3 +1,22 @@
-<form>
-    
+<form (ngSubmit)="saveExpense()">
+  <input
+    type="text"
+    name="expense"
+    [(ngModel)]="expense.expense"
+    placeholder="Enter Expense Name"
+  />
+  <input
+    type="text"
+    name="amount"
+    [(ngModel)]="expense.amount"
+    placeholder="Enter Expense Amount"
+  />
+  <textarea
+    type="text"
+    name="description"
+    [(ngModel)]="expense.description"
+    placeholder="Enter Expense Description"
+  ></textarea>
+
+  <button type="submit">Add Expense</button>
 </form>

@@ -4,4 +4,6 @@
     {{ expense.expense }}
   </h3>
   <p>{{ expense.amount | currency: " Kes " }}</p>
+
+  <a routerLink="/editexpense/{{expense.id}}">Edit</a>
 </div>

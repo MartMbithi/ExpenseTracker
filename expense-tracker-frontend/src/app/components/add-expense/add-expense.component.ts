@@ -20,11 +20,10 @@ export class AddExpenseComponent implements OnInit {
   ngOnInit(): void {
     const isIdPresent = this._activatedRoute.snapshot.paramMap.has('id');
     if (isIdPresent) {
-      
       const id = Number(this._activatedRoute.snapshot.paramMap.get('id'));
-      this._expenseService.getExpense(id).subscribe(
-        data => this.expense = data
-      )
+      this._expenseService
+        .getExpense(id)
+        .subscribe((data) => (this.expense = data));
     }
   }
 
@@ -36,5 +35,11 @@ export class AddExpenseComponent implements OnInit {
     });
   }
 
-  //
+  //Delete Expense
+  deleteExpense(id: number) {
+    this._expenseService.deleteExpense(id).subscribe((data) => {
+      console.log('deleted response', data);
+      this._router.navigateByUrl('/expenses');
+    });
+  }
 }

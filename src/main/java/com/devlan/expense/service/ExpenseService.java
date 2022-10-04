@@ -14,4 +14,7 @@ public interface ExpenseService {
     
     //Update Expense
     Expense findById(Long id);  
+    
+    //DeleteExpense
+    void delete(Long id);   
 }

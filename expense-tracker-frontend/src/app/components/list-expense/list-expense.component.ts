@@ -22,8 +22,19 @@ export class ListExpenseComponent implements OnInit {
       .subscribe((data) => (this.expenses = data));
   }
 
+  //List Expenses
+  listExpenes() {
+    this._expenseService
+      .getExpenses()
+      .subscribe((data) => (this.expenses = this.filterExpenses(data)));
+  }
+
   //Filter Expenses
-  filterExpenses(){
-    console.log(this.filters)
+  filterExpenses(expenses: Expense[]) {
+    return expenses.filter((e) => {
+      return e.expense
+        .toLocaleLowerCase()
+        .includes(this.filters.keyword.toLocaleLowerCase());
+    });
   }
 }

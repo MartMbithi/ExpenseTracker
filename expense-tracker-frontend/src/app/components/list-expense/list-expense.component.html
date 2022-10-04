@@ -1,7 +1,7 @@
 <a routerLink="/addexpense">Add Expense</a>
 <input
   type="text"
-  [(ngModel)]="filter.keyword"
+  [(ngModel)]="filters.keyword"
   name="keyword"
   input = "filterExpenses()"
 />
@@ -12,5 +12,4 @@
   <p>{{ expense.amount | currency: " Kes " }}</p>
 
   <a routerLink="/editexpense/{{ expense.id }}">Edit</a>
-  <button (click)="deleteExpense(expense.id)">Delete</button>
 </div>

@@ -24,5 +24,14 @@ public class ExpenseServiceImpl implements ExpenseService {
         expenseRepository.save(expense);
         return expense;
     }
+    
+    @Override
+    public Expense findById(Long id) {
+        if(expenseRepository.findById(id).isPresent()) {
+            return expenseRepository.findById(id).get();    
+        }
+        return null;    
+
+    }
 
 }

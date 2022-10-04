@@ -11,4 +11,7 @@ public interface ExpenseService {
     
     //Save New Expense
     Expense save(Expense expense);
+    
+    //Update Expense
+    Expense findById(Long id);  
 }

@@ -5,18 +5,25 @@ import { ExpenseService } from 'src/app/services/expense.service';
 @Component({
   selector: 'app-list-expense',
   templateUrl: './list-expense.component.html',
-  styleUrls: ['./list-expense.component.css']
+  styleUrls: ['./list-expense.component.css'],
 })
 export class ListExpenseComponent implements OnInit {
-
   expenses: Expense[] = [];
 
-  constructor(private _expenseService: ExpenseService) { }
+  filters = {
+    keyword: '',
+  };
+
+  constructor(private _expenseService: ExpenseService) {}
 
   ngOnInit(): void {
-    this._expenseService.getExpenses().subscribe(
-      data => this.expenses = data
-    )
+    this._expenseService
+      .getExpenses()
+      .subscribe((data) => (this.expenses = data));
   }
 
+  //Filter Expenses
+  filterExpenses(){
+    console.log(this.filters)
+  }
 }

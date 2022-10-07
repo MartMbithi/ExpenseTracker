@@ -3,7 +3,7 @@
   type="text"
   [(ngModel)]="filters.keyword"
   name="keyword"
-  input = "filterExpenses()"
+  input = "listExpenses()"
 />
 <div *ngFor="let expense of expenses">
   <h3>
@@ -13,3 +13,4 @@
 
   <a routerLink="/editexpense/{{ expense.id }}">Edit</a>
 </div>
+ 
